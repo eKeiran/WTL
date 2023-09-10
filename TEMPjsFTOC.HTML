@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fahrenheit to Celsius</title>
+</head>
+
+<body>
+    <h1>Convert Fahrenheit to Celsius</h1>
+    <script>
+        // Prompt the user for the temperature in Fahrenheit
+        const fahrenheit = parseFloat(prompt("Enter the temperature in Fahrenheit:"));
+
+        // Convert Fahrenheit to Celsius
+        const celsius = (fahrenheit - 32) * 5 / 9;
+
+        // Display the result on the page
+        document.write("<p>Temperature in Fahrenheit: " + fahrenheit + "°F</p>");
+        document.write("<p>Temperature in Celsius: " + celsius.toFixed(2) + "°C</p>");
+    </script>
+</body>
+
+</html>

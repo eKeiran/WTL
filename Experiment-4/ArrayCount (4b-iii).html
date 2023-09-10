@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ArrayCount</title>
+  </head>
+  <body style="
+  color: white;
+  text-align: center;
+  
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  background-color: rgba(0, 0, 0, 0.953);
+">  <p style="top:40%; left: 40%; position:absolute;">
+    arr = ["a", "b", "a", "c", "z"]
+    <br>
+    Search occurance of any alphabet in array- Enter alphabet:
+    <div id="div1" style="top:50%; left: 47%; position:absolute;"">
+      <input type="text" id="ip1" />
+      <input type="button" value="click" onclick="func()" />
+    </div>
+    </p>
+    <script>
+      var txt = document.getElementById("ip1");
+      var ans = document.getElementById("div1");
+      var arr = ["a", "b", "a", "c", "z"];
+
+      function func() {
+        var txt1 = txt.value;
+        var newtxt = txt1.toLowerCase();
+        let c = 0;
+        for (let i of arr) {
+          if (i == newtxt) {
+            c++;
+          }
+        }
+        ans.innerHTML = `Occurences of ${newtxt} = ${c}`;
+      }
+    </script>
+  </body>
+</html>

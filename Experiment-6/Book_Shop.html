@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./icons8-book-96.png" type="image/icon" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop and Shopping Cart</title>
+    <style>
+        /* Add your CSS styles for the UI here */
+        body {
+            overflow-x: hidden;
+            background-color: #fffffff0;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        #head {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        #banner {
+            width: 100%;
+            height: 350px;
+            background-image: url('./images/bookshop.jpg');
+            /* Add your image path here */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-color: #223;
+            color: #FFF;
+            text-shadow: 3px 3px 7px #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #banner>h1 {
+            background-color: rgba(240, 248, 255, 0.742);
+            max-width: max-content;
+            max-height: min-content;
+            color: rgb(0, 0, 0);
+            font-family: "Mom´sTypewriter";
+            border-radius: 10px;
+            border: dotted rgb(0, 0, 0) 5px;
+            font-size: 50px;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        .content {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: -1px;
+        }
+
+        .cart {
+            width: 25%;
+            position: relative;
+            /* Add this to position the pseudo-element */
+            color: #000000;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .cart::before {
+            content: "";
+            background-image: url(./images/bookcart.jpg);
+            opacity: 0.4;
+            /* Adjust the opacity as desired */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Place the pseudo-element behind the content */
+        }
+
+        .display {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            overflow-y: auto;
+            /* Add scroll for books */
+        }
+
+        /* Style for "Add to Cart" button */
+        .add-button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: lightgreen;
+            border: none;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for "Add to Cart" button */
+        .add-button:hover {
+            background-color: rgb(70, 255, 70);
+        }
+
+        /* Style for "Remove" button */
+        .remove-button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: rgb(255, 103, 103);
+            /* Changed to red */
+            border: none;
+            color: white;
+            /* Text color white */
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for "Remove" button */
+        .remove-button:hover {
+            background-color: rgb(255, 50, 50);
+            /* Darker red on hover */
+        }
+
+        /* Style for book containers */
+        .book-container {
+            width: 30%;
+            margin-top: 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            text-align: center;
+            box-shadow: 0 0 10px rgb(97, 208, 255);
+            border-radius: 2px;
+        }
+
+        .book-container img {
+            max-width: 70%;
+            height: auto;
+        }
+
+        #total-cost {
+            text-decoration: underline;
+            font-size: 35px;
+            align-items: center;
+        }
+    </style>
+
+    <header id="head">
+        <div id="banner">
+            <h1> Keera's Book Shop 🔖 </h1>
+        </div>
+    </header>
+</head>
+
+<body>
+    <div class="content">
+        <div class="cart">
+            <h2><span id="total-cost">Cart: $0</span></h2>
+            <div id="cart">
+                <!-- Display items in the cart here -->
+            </div>
+        </div>
+        <div class="display">
+            <!-- Display available books here -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for the shopping cart functionality
+        const productList = document.querySelector(".display");
+        const cart = document.getElementById("cart");
+        const totalCostElement = document.getElementById("total-cost"); // Get the total cost element
+
+        const products = [
+            { id: 1, name: "Throne of Glass", price: 12.99 },
+            { id: 2, name: "Crown of Midnight", price: 13.99 },
+            { id: 3, name: "Heir of Fire", price: 11.99 },
+            { id: 4, name: "Queen of Shadows", price: 14.99 },
+            { id: 5, name: "Empire of Storms", price: 15.99 },
+            { id: 6, name: "Tower of Dawn", price: 13.49 },
+            { id: 7, name: "Kingdom of Ash", price: 16.99 },
+            { id: 8, name: "The Assassin's Blade", price: 10.99 },
+            { id: 9, name: "The Invisible Life of Addie LaRue", price: 16.99 },
+
+
+        ];
+
+        const cartItems = [];
+
+        // Function to display products
+        function displayProducts() {
+            productList.innerHTML = "";
+            products.forEach((product) => {
+                const productElement = document.createElement("div");
+                productElement.classList.add("book-container");
+                productElement.innerHTML = `
+                    <img src="./images/${product.name}.jpg" alt="${product.name}">
+                    <p>${product.name} - $${product.price}</p>
+                    <button class="add-button" onclick="addToCart(${product.id})">Add to Cart</button>
+                `;
+                productList.appendChild(productElement);
+            });
+        }
+
+        // Function to add an item to the cart
+        function addToCart(productId) {
+            const product = products.find((item) => item.id === productId);
+            if (!product) {
+                return;
+            }
+
+            const existingCartItem = cartItems.find((item) => item.id === productId);
+            if (existingCartItem) {
+                existingCartItem.quantity++;
+            } else {
+                cartItems.push({ ...product, quantity: 1 });
+            }
+            updateTotalCost();
+            displayCart();
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(productId) {
+            const index = cartItems.findIndex((item) => item.id === productId);
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+                displayCart();
+                updateTotalCost();
+            }
+        }
+
+        // Function to display the cart
+        function displayCart() {
+            cart.innerHTML = "";
+            cartItems.forEach((item) => {
+                const cartItemElement = document.createElement("div");
+                cartItemElement.innerHTML = `
+                    <p>${item.name} - $${item.price} - Quantity: ${item.quantity}</p>
+                    <button class="remove-button" onclick="removeFromCart(${item.id})">Remove</button>
+                `;
+                cart.appendChild(cartItemElement);
+            });
+        }
+        function updateTotalCost() {
+            const totalCost = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+            totalCostElement.textContent = `Cart: $${totalCost.toFixed(2)}`; // Display total cost with 2 decimal places
+        }
+
+        // Initial display
+        displayProducts();
+    </script>
+</body>
+
+</html>

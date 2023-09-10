@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+
+<body>
+    <div>
+        <h1><u>Company Registration Form</u></h1>
+        <h2><i>Applicant Details:</i></h2>
+        <form class="form">
+            <p><label> Buisness Name: </label><input class="name" type="text" size="20" /><br>
+                <br>
+                <label> Buisness Description: </label>
+                <textarea
+                    style="background-color: rgb(255, 255, 255); border: 2px solid  #717171; outline: none; color: #000"
+                    type="text" rows="2" cols="65"></textarea>
+                <br> <br>
+                <label> Email:
+        </form> <input class="details" type="text" /><br>
+        <br>
+        <label> Phone Number: </label> <input class="details" type="text" /><br>
+        <br>
+        <label>Shipping Address</label> <br>Address:
+        <input type="text" required>
+        City:
+        <input type="text" required>
+
+        State:
+        <input type="text" required> <br><br>
+
+        Country:
+        <select required>
+            <option value="">Select a country</option>
+            <option value="USA">United States</option>
+            <option value="IN">India</option>
+            <option value="CAN">Canada</option>
+            <option value="GBR">United Kingdom</option>
+        </select>
+        <br>
+        <br>
+        Trading Since:<br>
+        <select name="month">
+            <option value="">Month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+
+        <select name="day">
+            <option value="">Day</option>
+            <script>
+                for (var day = 1; day <= 31; day++) {
+                    var dayValue = day.toString().padStart(2, '0');
+                    document.write('<option value="' + dayValue + '">' + day + '</option>');
+                }
+            </script>
+        </select>
+
+        <select name="year">
+            <option value="">Year</option>
+            <script>
+                var currentYear = new Date().getFullYear();
+                for (var year = 1990; year <= currentYear; year++) {
+                    document.write('<option value="' + year + '">' + year + '</option>');
+                }
+            </script>
+        </select>
+        <span class="typeBuisness">
+
+            Type of buisness: <br>
+            <label class="">
+                <input type="checkbox" name="businessType" value="internet">
+                Internet
+            </label>
+            <label>
+                <input type="checkbox" name="businessType" value="books">
+                Books
+            </label>
+            <label>
+                <input type="checkbox" name="businessType" value="wholesale">
+                Wholesale
+            </label>
+            <label>
+                <input type="checkbox" name="businessType" value="wholesale">
+                Clothing
+            </label>
+            <label>
+                <input type="checkbox" name="businessType" value="wholesale">
+                Education
+            </label>
+            <label>
+                <input type="checkbox" name="businessType" value="wholesale">
+                Other
+            </label>
+        </span>
+        <span style="justify-content: center; align-items: center; display: flex; flex-direction: row;">
+            <input type="submit" style="align-items: center; background-color: rgb(183, 255, 183); margin-right: 20px; padding: 5px" onclick="myFunction()"  class="input"  value="Submit Form" />
+            <input class="input" style=" background-color: rgb(255, 183, 183); padding: 5px" type="reset" value="Reset" />
+        </span>
+    </div>
+    </form>
+    </p>
+    </div>
+
+</body>
+<script>
+    function myFunction() {
+        alert("Form Submitted");
+    }
+</script>
+</html>

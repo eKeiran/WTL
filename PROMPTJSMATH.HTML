@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Simple Calculator</h1>
+    <script>
+        // Prompt the user for two numbers
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+
+        // Perform calculations
+        const addition = num1 + num2;
+        const subtraction = num1 - num2;
+        const multiplication = num1 * num2;
+        const division = num1 / num2;
+
+        // Display the results on the page
+        document.write("<p>Number 1: " + num1 + "</p>");
+        document.write("<p>Number 2: " + num2 + "</p>");
+        document.write("<p>Addition: " + addition + "</p>");
+        document.write("<p>Subtraction: " + subtraction + "</p>");
+        document.write("<p>Multiplication: " + multiplication + "</p>");
+        document.write("<p>Division: " + division + "</p>");
+    </script>
+</body>
+
+</html>

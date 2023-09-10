@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Tag</title>
+    <style>
+      /* Center the anchor tag */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Set the height of the body to full viewport height */
+        margin: 0;
+      }
+
+      /* Style for the anchor tag */
+      a {
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      /* Hover effect */
+      a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      const link = document.createElement("a");
+      link.href = "https://www.google.com/";
+      link.textContent = "Click here to go to Google.com";
+      document.body.appendChild(link);
+    </script>
+  </body>
+</html>

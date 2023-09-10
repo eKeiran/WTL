@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ArrayOfColors</title>
+</head>
+
+<body style="color: white;
+  text-align: center;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  background-color: rgba(0, 0, 0, 0.953);">
+    <p >
+        colors = <span id="colorArray">["Red", "Green", "Blue"]</span>
+        <br> Accept a value from the user
+        and add it to the array if the value is not present in the array.
+        <br>
+        Enter a Color: <input type="text" id="inp1" /> <br /><br />
+        <input type="button" value="click" onclick="func()" />
+    </p>
+    <script>
+        var txt = document.getElementById("inp1");
+        var colors = ["Red", "Green", "Blue"];
+
+        function updateColorArrayDisplay() {
+            var colorArraySpan = document.getElementById("colorArray");
+            colorArraySpan.textContent = "[" + colors.map(color => '"' + color + '"').join(", ") + "]";
+        }
+
+        function func() {
+            var txt1 = txt.value;
+            var text = txt1.trim();
+
+            if (text !== "") {
+                var color = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+                if (!colors.includes(color)) {
+                    alert("Color is not present in the array and is added!");
+                    colors.push(color);
+                    updateColorArrayDisplay();
+                } else {
+                    alert("Color is already present in the array!");
+                }
+            } else {
+                alert("Please enter a valid color!");
+            }
+        }
+    </script>
+</body>
+
+</html>

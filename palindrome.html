@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palindrome Checker</title>
+</head>
+<body>
+<script>
+function isPalindrome(str) {
+  str = str.toLowerCase();
+  let cleanStr = "";
+  
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char >= 'a' && char <= 'z' || char >= '0' && char <= '9') {
+      cleanStr += char;
+    }
+  }
+
+  const len = cleanStr.length;
+  for (let i = 0; i < len / 2; i++) {
+    if (cleanStr[i] !== cleanStr[len - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const userInput = prompt("Enter a string:");
+
+if (userInput) {
+  if (isPalindrome(userInput)) {
+    alert(`"${userInput}" is a palindrome.`);
+  } else {
+    alert(`"${userInput}" is not a palindrome.`);
+  }
+} else {
+  alert("No input provided.");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triangle Area Calculator</title>
+</head>
+<body>
+<script>
+function calculateTriangleArea(a, b, c) {
+  if (a <= 0 || b <= 0 || c <= 0) {
+    return "Invalid side lengths. Side lengths must be positive.";
+  }
+
+  const s = (a + b + c) / 2;
+  const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+  return area;
+}
+
+const sideA = parseFloat(prompt("Enter the length of side A:"));
+const sideB = parseFloat(prompt("Enter the length of side B:"));
+const sideC = parseFloat(prompt("Enter the length of side C:"));
+
+if (!isNaN(sideA) && !isNaN(sideB) && !isNaN(sideC)) {
+  const area = calculateTriangleArea(sideA, sideB, sideC);
+  if (typeof area === "string") {
+    alert(area);
+  } else {
+    alert(`The area of the triangle is: ${area.toFixed(2)}`);
+  }
+} else {
+  alert("Invalid input. Please enter numeric values for side lengths.");
+}
+</script>
+</body>
+</html>

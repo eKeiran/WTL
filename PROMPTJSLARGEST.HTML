@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Largest Number</title>
+</head>
+
+<body>
+    <h1>Find the Largest Number</h1>
+    <script>
+        // Prompt the user for three numbers
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+        const num3 = parseFloat(prompt("Enter the third number:"));
+
+        // Find the largest number among the three
+        let largest = num1;
+
+        if (num2 > largest) {
+            largest = num2;
+        }
+
+        if (num3 > largest) {
+            largest = num3;
+        }
+
+        // Display the result on the page
+        document.write("<p>Number 1: " + num1 + "</p>");
+        document.write("<p>Number 2: " + num2 + "</p>");
+        document.write("<p>Number 3: " + num3 + "</p>");
+        document.write("<p>Largest number: " + largest + "</p>");
+    </script>
+</body>
+
+</html>

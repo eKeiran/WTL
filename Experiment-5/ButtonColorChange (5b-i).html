@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Color Change</title>
+  <style>
+    /* Center the button and make it bigger */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #myButton {
+      width: 300px; /* Set the width to make it bigger */
+      height: 300px; /* Set the height to make it bigger */
+      background-color: yellow;
+      border-radius: 50%; /* Make it a circle */
+      color: rgb(0, 0, 0);
+      font-size: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border: 20px bold black dashed;
+    }
+
+    #myButton:hover {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="myButton">Click me!</button>
+  <script>
+    const myButton = document.getElementById("myButton");
+
+    myButton.addEventListener("mouseover", function () {
+      myButton.style.backgroundColor = "red";
+    });
+
+    myButton.addEventListener("mouseout", function () {
+      myButton.style.backgroundColor = "yellow";
+    });
+
+    myButton.addEventListener("click", function () {
+      myButton.style.backgroundColor = "green";
+    });
+  </script>
+</body>
+</html>

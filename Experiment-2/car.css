@@ -1,0 +1,120 @@
+body {
+    overflow-x: hidden;
+    background-color: #000000f0;
+}
+
+#head {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+#banner {
+    width: 100%;
+    height: 350px;
+    background-image: url(./Images/carhead.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: fixed;
+    background-size: contain;
+    background-color: #223;
+    color: #FFF;
+    text-shadow: 3px 3px 7px #000;
+    overflow: hidden;
+    border: 8px rgb(255, 255, 255) double;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#banner>h1 {
+    background-color: rgba(240, 248, 255, 0.286);
+    max-width: max-content;
+    max-height: min-content;
+    color: rgb(0, 179, 255);
+    font-family: 'Blazed';
+    display: flexbox;
+    border-radius: 10px;
+    border: dashed rgb(0, 0, 255) 5px;
+    font-size: 70px;
+    align-items: center top;
+    justify-content: center;
+}
+
+footer {
+    background-color: #0074e4;
+    /* Blue */
+    color: #fff;
+    /* White text */
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Main Content Styles */
+.car-workshop {
+    background-color: #fff;
+    font-family: "Bahnschrift";
+    padding: 2px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgb(0, 179, 255);
+}
+
+.car-workshop img {
+    max-width: 35%;
+    padding: none;
+    box-shadow: 0 0 30px rgb(0, 179, 255);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0px;
+    
+    text-align: center;
+}
+
+h1,
+h2 {
+    text-decoration: underline;
+    color: #0074e4;
+    font-size: 35px;
+    padding: -10px;
+
+    /* Blue */
+}
+
+table {
+    width: 40%;
+    /* Set the desired width here */
+    margin: 0 auto;
+    /* Center align the table horizontally */
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #E6F7FF;
+    /* Light blue */
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFFFF;
+    /* White */
+}

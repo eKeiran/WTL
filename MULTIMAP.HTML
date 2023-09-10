@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Multiplication Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+       td:nth-child(1) {
+            background-color: pink;
+        }
+
+        tr:nth-child(1) {
+            background-color: gold;
+        }
+        tr:nth-child(1) td:nth-child(1) {
+  background: linear-gradient(to bottom right, gold, pink);
+  color: white;
+}
+
+    </style>
+</head>
+
+<body>
+    <h1>Multiplication Table</h1>
+    <p>Enter the number of rows and columns for the multiplication table:</p>
+    <label>Rows: <input type="number" id="rowsInput" /></label>
+    <label>Columns: <input type="number" id="columnsInput" /></label>
+    <button id="generateTableButton">Generate Table</button>
+    <table id="multiplicationTable"></table>
+
+    <script>
+        const generateTableButton = document.getElementById("generateTableButton");
+        const multiplicationTable = document.getElementById("multiplicationTable");
+
+        generateTableButton.addEventListener("click", function() {
+            const rowsInput = parseInt(document.getElementById("rowsInput").value);
+            const columnsInput = parseInt(document.getElementById("columnsInput").value);
+
+            if (!isNaN(rowsInput) && !isNaN(columnsInput)) {
+                multiplicationTable.innerHTML = "";
+
+                for (let row = 1; row <= rowsInput; row++) {
+                    const rowElement = document.createElement("tr");
+
+                    for (let col = 1; col <= columnsInput; col++) {
+                        const cellElement = document.createElement("td");
+                        cellElement.textContent = row * col;
+                        rowElement.appendChild(cellElement);
+                    }
+
+                    multiplicationTable.appendChild(rowElement);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

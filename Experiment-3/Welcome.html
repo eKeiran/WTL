@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the World of JS</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .input-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-container input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <h2>Hello! Welcome to the world of JS!</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="displayGreeting()">Submit</button>
+    </div>
+
+    <script>
+
+        function displayGreeting() {
+            var name = document.getElementById("nameInput").value;
+            if (name) {
+                alert("Hello! Welcome " + name + " to the world of JS!");
+            } else {
+                alert("Hello! Welcome to the world of JS!");
+            }
+        }
+    </script>
+</body>
+</html>

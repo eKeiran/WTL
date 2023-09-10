@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sum of Integers</title>
+</head>
+
+<body>
+    <h1>Calculate Sum of Integers</h1>
+    <script>
+        // Prompt the user for a number
+        const number = parseInt(prompt("Enter a number:"));
+
+        // Calculate the sum of integers
+        let sum = 0;
+        for (let i = 0; i <= number; i++) {
+            sum += i;
+        }
+
+        // Display the result on the page
+        document.write("<p>Number: " + number + "</p>");
+        document.write("<p>Sum of integers: " + sum + "</p>");
+    </script>
+</body>
+
+</html>

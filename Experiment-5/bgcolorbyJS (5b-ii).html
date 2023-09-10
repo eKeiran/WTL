@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Change</title>
+  <style>
+    /* Center the buttons */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    ol {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    li {
+      margin: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff; /* Blue background color */
+      color: white; /* White text color */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <ol>
+    <li><button onclick="funred()">Red</button></li>
+    <li><button onclick="funblue()">Blue</button></li>
+    <li><button onclick="funyellow()">Yellow</button></li>
+    <li><button onclick="fungreen()">Green</button></li>
+  </ol>
+  <script>
+    var i = 0;
+    var color = ["red", "blue", "yellow", "green"];
+
+    function funred() {
+      for (let i in color) {
+        if (color[i] == "red") {
+          document.bgColor = color[i];
+          i++;
+        }
+      }
+    }
+    function funblue() {
+      for (let i in color) {
+        if (color[i] == "blue") {
+          document.bgColor = color[i];
+          i++;
+        }
+      }
+    }
+    function funyellow() {
+      for (let i in color) {
+        if (color[i] == "yellow") {
+          document.bgColor = color[i];
+          i++;
+        }
+      }
+    }
+    function fungreen() {
+      for (let i in color) {
+        if (color[i] == "green") {
+          document.bgColor = color[i];
+          i++;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

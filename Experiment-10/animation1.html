@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animation</title>
+    <style>
+      #anim_div {
+        color: #ffff00;
+        background-color: #0e1822;
+        width: 150px;
+        font-size: 1em;
+        border: 1px solid #161d0c;
+        border-radius: 30px;
+      }
+    </style>
+    <script src="jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <button id="start">Animate</button><br /><br />
+
+    <div id="anim_div">TANMAY</div>
+
+    <script>
+      $("#start").click(function () {
+        $("#anim_div").animate(
+          {
+            width: "400px",
+            opacity: "0.6",
+            marginLeft: "40px",
+            paddingLeft: "30px",
+            fontSize: "3em",
+            borderWidth: "3px",
+            borderRadius: "500px",
+            backgroundColor: "#000",
+          },
+          3000
+        );
+      });
+    </script>
+  </body>
+</html>

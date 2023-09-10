@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>No Same Color</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="txt">Sample Text</h1>
+
+      <select name="Font Color" id="fc">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select>
+
+      <select name="Background Color" id="bc">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <hr />
+      <br />
+
+      <input type="button" id="btn1" onclick="func1()" value="Click here" />
+    </div>
+    <script>
+      function func1() {
+        var text = document.getElementById("txt");
+        var c1 = document.getElementById("fc").value;
+        var c2 = document.getElementById("bc").value;
+
+        var color = ["red", "green", "blue", "yellow"];
+
+        if (c1 == c2) {
+          text.style.color = "black";
+          text.style.backgroundColor = "white";
+        } else {
+          text.style.color = c1;
+          text.style.backgroundColor = c2;
+        }
+      }
+    </script>
+  </body>
+</html>

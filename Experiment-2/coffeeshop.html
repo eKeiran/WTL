@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CoffeeShopMenu</title>
+  <link rel="icon" href="./Images/coffee-cup.png" type="image/icon" />
+  <style>
+    body {
+      color: #000;
+      text-align: center;
+      font-weight: lighter;
+      font-family: "Love Coffee";
+      background: url('./Images/coffee-beans.jpg') no-repeat center center fixed;
+      background-size: cover;
+
+    }
+
+    .LOGO {
+      position: absolute;
+      left: 130px;
+      top: 270px;
+    }
+    .LOGO2 {
+      position: absolute;
+      right: 80px;
+      top: 200px;
+    }
+
+    tr {
+      font-family: "Script MT";
+    }
+
+    th {
+      font-family: "Love Coffee";
+    }
+
+    input[type="checkbox"] {
+      
+      background-color: #fff;
+      margin: 3px;
+      font: inherit;
+      accent-color: brown;
+      width: 1.15em;
+      height: 1em;
+      border: 0.15em solid currentColor;
+      border-radius: 0.15em;
+      
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <div style="
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+      ">
+    <img src="./Images/png-transparent-coffee-cup-tea-cafe-coffee-jar-food-cafe-tea.png" CLASS="LOGO" alt="coffee"
+      style="width: 200px" />
+
+      <img src="./Images/firstcoffee.jpg" CLASS="LOGO2" alt="coffee"
+      style="width: 400px" />
+    <h1 style="
+          color: brown;
+          width: 30%;
+          text-align: center;
+          font-size: 50px;
+          text-shadow: 4px 2px #d03f0fc6;
+          
+        ">
+
+      <div style="font-family: Love Coffee; background-color: aliceblue; border-radius: 30PX; border: 5PX #000 dashed;">
+        <u>COFFEE TOFFEE</u>
+      </div>
+    </h1>
+
+    <div>
+      <h1 style="background-color: aliceblue; color: brown; padding: 12px; border-radius: 8px;"><u>Menu</u></h2>
+    </div>
+
+    <table style="
+          width: 30%;
+          font-size: large;
+          background-image: linear-gradient(to bottom right,rgb(234, 144, 144),  rgba(255, 255, 255, 0.8));
+        ">
+      <tr>
+        <th style="width: 1%; color: brown"><u>Hot Coffee Classics</u></th>
+        <th style="width: 1%; color: BROWN"><u>Price</u></th>
+      </tr>
+      <tr>
+        <td>Cappuccino</td>
+        <td>₹110</td>
+      </tr>
+      <tr>
+        <td>Expresso</td>
+        <td>₹98</td>
+      </tr>
+      <tr>
+        <td>Filter Coffee</td>
+        <td>₹110</td>
+      </tr>
+      <tr>
+        <td>Cafe Latte</td>
+        <td>₹115</td>
+      </tr>
+      <tr>
+        <td>Cafe Mocha</td>
+        <td>₹139</td>
+      </tr>
+      <tr>
+        <td>Cafe Americano</td>
+        <td>₹124</td>
+      </tr>
+      <tr>
+        <th style="color: BROWN"><u>Cool Coffee Delights</u></th>
+      </tr>
+      <tr>
+        <td>Cold Coffee</td>
+        <td>₹139</td>
+      </tr>
+      <tr>
+        <td>Signature Cold Coffee</td>
+        <td>₹169</td>
+      </tr>
+      <tr>
+        <td>Cold Cafe Mocha</td>
+        <td>₹145</td>
+      </tr>
+      <tr>
+        <td>Moca Frappe</td>
+        <td>₹169</td>
+      </tr>
+      <tr>
+        <td>Cold Velvet Coffee</td>
+        <td>₹178</td>
+      </tr>
+    </table>
+    <div style="background-color: rgba(240, 248, 255, 0.705); width: 40%;">
+      <p style="font-size: 20px; font-style: italic">
+        Select a flavour:
+        <select name="extra"
+          style="background-color:rgb(234, 144, 144); padding: 2px; margin: 12px; width: 40%; align-items: center; font-family: Script MT; font-size: large; font-style: italic">
+          <option>None</option>
+          <option>Hazelnut pump ₹40</option>
+          <option>Irish pump ₹50</option>
+          <option>Chai ₹10</option>
+        </select>
+
+        <br />
+        Extras:
+        <input type="checkbox" name="gender" />Foam
+        <input type="checkbox" name="gender" />Sugar
+        <input type="checkbox" name="gender" />A shot of Expresso
+      </p>
+      <input type="submit" onclick="myFunction()" value="Place Order" style="font-family: Script MT; font-size: 25px; padding: 8px; border-radius: 10px; color: white; background-color: rgba(191, 24, 24, 0.797); border: 3px dashed;" />
+    
+    </div>
+    <div style="background-color: rgba(240, 248, 255, 0.677);">
+      <br />
+      <p>&#169;Coffee Toffee @ Keera Shops. All Rights Reserved.</p>
+    </div>
+</body>
+<script>
+  function myFunction() {
+    alert("ORDER PLACED");
+  }
+  </script>
+</html>

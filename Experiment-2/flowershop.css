@@ -1,0 +1,136 @@
+#head {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+#banner {
+    width: 100%;
+    height: 350px;
+    background-image: url(./Images/flowershop.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: fixed;
+    background-size: contain;
+    background-color: #223;
+    color: #FFF;
+    text-shadow: 3px 3px 7px #000;
+    overflow: hidden;
+    border: 8px rgb(255, 255, 255) double;
+    display: flex;
+    align-items: center ;
+    justify-content: center ;
+
+}
+
+#banner > h1 {
+    background-color: rgba(240, 248, 255, 0.671);
+    max-width: max-content;
+    max-height: min-content;
+    color:rgb(255, 0, 119);
+    font-family: 'French Script MT';
+    display: flexbox;
+    border-radius: 100px;
+    border: dashed rgb(255, 0, 119) 10px;
+    font-size: 90px;
+    align-items: center top;
+    justify-content: center;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-y:visible;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: pink;
+    outline: 1px solid slategrey;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("./Images/secretgarden.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-family: Script MT;
+    display: grid;
+    place-items: center;
+    flex-direction: column;
+}
+
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px;
+    margin-bottom: 180px;
+    font-family: "BOTANIC PERSONAL USE";
+}
+
+.card {
+    margin-bottom: 170px;
+    position: relative;
+    max-width: 320px;
+    max-height: 260px;
+    box-shadow: 0 40px 60px -6px black;
+    transform-origin: center;
+    transform: perspective(800px) rotateY(21deg);
+    transition: 0.5s;
+    margin-right: 20px;
+}
+
+.card-title {
+    display: block;
+    text-align: center;
+    color: #000000;
+    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #ffffff;
+    padding: 0;
+    margin-bottom: -10px;
+    margin-top: -10px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    position: relative;
+
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin: 40px 0 20px 0;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.cards:hover img {
+    opacity: 0.74;
+}
+
+.card:hover {
+    transform: perspective(800px) rotateY(0deg);
+    opacity: 1;
+}
+
+.card:hover img {
+    opacity: 1;
+}

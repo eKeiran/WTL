@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Table</title>
+  <link rel="stylesheet" type="text/css" href="Style.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: "Bahnschrift";
+      background-color: #ffcccc; /* Pink background */
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 600px;
+      background-color: white; /* White table background */
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #ff99bb; /* Pink header background */
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffcccc; /* Pink alternate rows */
+    }
+
+    tr:nth-child(odd) {
+      background-color: white; /* White alternate rows */
+    }
+
+    input[type="button"], button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2><u>Keera's Report</u></h2>
+  <table id="t1">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Code</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Physics</td>
+        <td>BIT20</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Chemistry</td>
+        <td>BIT19</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>Maths</td>
+        <td>BIT23</td>
+        <td>88</td>
+      </tr>
+    </tbody>
+  </table><br>
+  <input type="text" id="subject" placeholder="Subject"><br>
+  <input type="text" id="code" placeholder="Code"><br>
+  <input type="text" id="marks" placeholder="Marks"><br>
+  <button style="background-color: rgb(136, 255, 127); color: black; padding: 4px;" onclick="addRow()">ADD</button>
+  <button  style="background-color: rgb(255, 127, 127); color: black; padding: 4px;" onclick="myDeleteFunction()">DELETE</button>
+
+  <script type="text/javascript">
+    function addRow() {
+      var x = document.getElementById("t1");
+
+      var subject = document.getElementById("subject").value;
+      var code = document.getElementById("code").value;
+      var marks = document.getElementById("marks").value;
+
+      var tr1 = document.createElement("tr");
+      var row1 = document.createElement("td");
+      var row2 = document.createElement("td");
+      var row3 = document.createElement("td");
+
+      var Node1 = document.createTextNode(subject);
+      var Node2 = document.createTextNode(code);
+      var Node3 = document.createTextNode(marks);
+
+      tr1.appendChild(row1);
+      tr1.appendChild(row2);
+      tr1.appendChild(row3);
+
+      row1.appendChild(Node1);
+      row2.appendChild(Node2);
+      row3.appendChild(Node3);
+
+      x.appendChild(tr1);
+    }
+
+    function myDeleteFunction() {
+      document.getElementById("t1").deleteRow(1);
+    }
+  </script>
+</body>
+</html>
+</html>

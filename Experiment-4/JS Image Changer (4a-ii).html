@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Changer</title>
+  </head>
+  <body id="val1">
+    <div id="div1" style="background-size: 500px 500px">
+      <input
+        type="button"
+        id="btn1"
+        value="Image Change"
+        onclick="imagechanger()"
+      />
+      <img id="img" alt="image" style="width: 500px; height: 500px" />
+    </div>
+    <script>
+      var i = 0;
+      function imagechanger() {
+        var img = document.getElementById("img");
+        var imgArray = [
+          "./Images/Akatsuki.png",
+          "./Images/Kakashi.jpg",
+          "./Images/Lord Seventh.jpg",
+          "./Images/Naruto.png",
+          "./Images/Pain.jpg",
+          "./Images/UrName1.jpg",
+          "./Images/Satoru Gojo.png",
+        ];
+        img.src = imgArray[i];
+        i++;
+        if (i === imgArray.length) {
+          i = 0;
+        }
+      }
+    </script>
+  </body>
+</html>

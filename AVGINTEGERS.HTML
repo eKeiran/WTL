@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Average of Integers</title>
+</head>
+
+<body>
+    <h1>Calculate Average of Integers</h1>
+    <script>
+        // Prompt the user for a number
+        const number = parseInt(prompt("Enter a number:"));
+
+        // Calculate the sum of integers
+        let sum = 0;
+        for (let i = 0; i <= number; i++) {
+            sum += i;
+        }
+
+        // Calculate the average
+        const average = sum / (number + 1);
+
+        // Display the result on the page
+        document.write("<p>Number: " + number + "</p>");
+        document.write("<p>Average of integers: " + average.toFixed(2) + "</p>");
+    </script>
+</body>
+
+</html>

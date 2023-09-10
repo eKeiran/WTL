@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array Operations</title>
+</head>
+
+<body>
+    <h1>Array Operations</h1>
+    <script>
+        // Prompt the user for array elements
+        const inputArray = prompt("Enter array elements separated by commas:").split(',').map(Number);
+
+        // Display entered array
+        document.write("<p>Entered Array: " + inputArray.join(', ') + "</p>");
+
+        // Sort the array in ascending order
+        const sortedArray = inputArray.slice().sort((a, b) => a - b);
+        document.write("<p>Array in Ascending Order: " + sortedArray.join(', ') + "</p>");
+
+        // Push element 25 to the array
+        inputArray.push(25);
+
+        // Display updated array
+        document.write("<p>Updated Array: " + inputArray.join(', ') + "</p>");
+
+        // Print length of the array
+        document.write("<p>Length of Array: " + inputArray.length + "</p>");
+
+        // Show element at position 3 (index 2)
+        const elementAtPosition3 = inputArray[2];
+        document.write("<p>Element at Position No 3: " + elementAtPosition3 + "</p>");
+    </script>
+</body>
+
+</html>
